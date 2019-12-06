@@ -7,13 +7,25 @@
             <p>I am</p>
             <b>
               <div class="textToScroll">
-                Iyah Nuestro.<br /> 
-                a Software Engineer.<br />
-                a puzzle-lover.<br />
-                customer-centric.
+                <div v-for="(text, index) in scrollText" :key="index">
+                  {{ text }}<br />
                 </div>
+              </div>
             </b>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="description">
+            <p>I love calculations as much as I love advocacies so I do love coding whether it's for a cause or for my personal entertainment.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <a class="btn btn-light custom-buttons">See My Works</a>
+          <a class="btn btn-outline-light custom-buttons secondary">Contact Me</a>
         </div>
       </div>
     </div>
@@ -26,6 +38,11 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  data() {
+    return {
+      scrollText: ['Iyah Nuestro.', 'a Software Engineer.', 'a puzzle-lover.', 'customer-centric.', 'radical.']
+    }
   }
 }
 </script>
@@ -37,10 +54,8 @@ export default {
     color: white;
     font-family: 'Fira Sans', sans-serif;
   }
-
   .textEffect {
-    padding: 2em 5em;
-    font: normal 40px/50px Montserrat, sans-serif;
+    font: normal 40px/50px 'Fira Sans', sans-serif;
     color: white;
     p {
       height: 50px;
@@ -56,7 +71,8 @@ export default {
     }
     .textToScroll {
       display: inline-block;
-      color: #e74c3c;
+      color: white;
+      opacity: 0.75;
       position: relative;
       white-space: nowrap;
       top: 0;
@@ -75,99 +91,112 @@ export default {
       -o-animation-iteration-count: infinite;
       animation-iteration-count: infinite;
       /*animation-delay*/
-      -webkit-animation-delay: 3s;
-      -moz-animation-delay: 3s;
-      -ms-animation-delay: 3s;
-      -o-animation-delay: 3s;
-      animation-delay: 3s;
+      -webkit-animation-delay: 10s;
+      -moz-animation-delay: 10s;
+      -ms-animation-delay: 10s;
+      -o-animation-delay: 10s;
+      animation-delay: 10s;
+    }
+    @keyframes move {
+      0% {
+        top: 0px;
+      }
+      20% {
+        top: -50px;
+      }
+      40% {
+        top: -100px;
+      }
+      60% {
+        top: -150px;
+      }
+      80% {
+        top: -200px;
+      }
+    }
+    @-webkit-keyframes move {
+      0% {
+        top: 0px;
+      }
+      20% {
+        top: -50px;
+      }
+      40% {
+        top: -100px;
+      }
+      60% {
+        top: -150px;
+      }
+      80% {
+        top: -200px;
+      }
+    }
+    @-moz-keyframes move {
+      0% {
+        top: 0px;
+      }
+      20% {
+        top: -50px;
+      }
+      40% {
+        top: -100px;
+      }
+      60% {
+        top: -150px;
+      }
+      80% {
+        top: -200px;
+      }
+    }
+    @-o-keyframes move {
+      0% {
+        top: 0px;
+      }
+      20% {
+        top: -50px;
+      }
+      40% {
+        top: -100px;
+      }
+      60% {
+        top: -150px;
+      }
+      80% {
+        top: -200px;
+      }
+    }
+    @keyframes move {
+      0% {
+        top: 0px;
+      }
+      20% {
+        top: -50px;
+      }
+      40% {
+        top: -100px;
+      }
+      60% {
+        top: -150px;
+      }
+      80% {
+        top: -200px;
+      }
     }
   }
-  @keyframes move {
-    0% {
-      top: 0px;
-    }
-    20% {
-      top: -50px;
-    }
-    40% {
-      top: -100px;
-    }
-    60% {
-      top: -150px;
-    }
-    80% {
-      top: -200px;
+  .description {
+    color: white;
+    font-family: 'Fira Sans', sans-serif;
+    padding-top: 24px;
+  }
+  .custom-buttons {
+    font-family: 'Fira Sans', sans-serif;
+    margin-top: 48px;
+    &.secondary {
+      color: white;
+      &:hover {
+        color: black;
+      }
     }
   }
-
-  @-webkit-keyframes move {
-    0% {
-      top: 0px;
-    }
-    20% {
-      top: -50px;
-    }
-    40% {
-      top: -100px;
-    }
-    60% {
-      top: -150px;
-    }
-    80% {
-      top: -200px;
-    }
-  }
-  @-moz-keyframes move {
-    0% {
-      top: 0px;
-    }
-    20% {
-      top: -50px;
-    }
-    40% {
-      top: -100px;
-    }
-    60% {
-      top: -150px;
-    }
-    80% {
-      top: -200px;
-    }
-  }
-  @-o-keyframes move {
-    0% {
-      top: 0px;
-    }
-    20% {
-      top: -50px;
-    }
-    40% {
-      top: -100px;
-    }
-    60% {
-      top: -150px;
-    }
-    80% {
-      top: -200px;
-    }
-  }
-  @keyframes move {
-    0% {
-      top: 0px;
-    }
-    20% {
-      top: -50px;
-    }
-    40% {
-      top: -100px;
-    }
-    60% {
-      top: -150px;
-    }
-    80% {
-      top: -200px;
-    }
-  }
-
 }
 </style>
