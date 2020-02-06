@@ -18,14 +18,15 @@
       <div class="row">
         <div class="col">
           <div class="description">
-            <p>I love calculations as much as I love advocacies so I do love coding whether it's for a cause or for my personal entertainment.</p>
+            <p>I am a software engineer with years of experience in FinTech, Supply Chain, and other various management systems.</p>
+            <p>You'd also often find me organizing and being heavily involved in events for geeks, learners, empowerment, and equality.</p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <a class="btn btn-light custom-buttons">See My Works</a>
-          <a class="btn btn-outline-light custom-buttons secondary">Contact Me</a>
+          <a class="btn btn-light custom-buttons" v-b-tooltip.hover title="Coming Soon!">See My Works</a>
+          <a class="btn btn-outline-light custom-buttons secondary" href="http://www.linkedin.com/in/iyahnuestro" target="_blank">Contact Me</a>
         </div>
       </div>
     </div>
@@ -42,6 +43,15 @@ export default {
   data() {
     return {
       scrollText: ['Iyah Nuestro.', 'a Software Engineer.', 'a puzzle-lover.', 'customer-centric.', 'radical.']
+    }
+  },
+  head () {
+    return {
+      title: 'Iyah Nuestro',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'description', name: 'description', content: 'Software Engineer' }
+      ]
     }
   }
 }
